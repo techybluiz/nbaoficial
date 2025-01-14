@@ -61,7 +61,123 @@
         }
         
         .formulario {
-            background-color: #ffd16c;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff0f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #d8d8d8;
+            border-color: #000000;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #FFB81C;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #fcdb95;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
         }
    
         @keyframes motion{
@@ -393,95 +509,90 @@
         </table>
     </div>
     
-    
     <div class="formulario">
-        <h2><b>Formulário de Perguntas sobre o Cleveland Cavaliers</b></h2>
+        <h2 id="quiz"><b>Formulário de Perguntas sobre o Cleveland Cavaliers</b></h2>
         <form id="cavaliers-form">
             <div class="form-group">
                 <label>Qual é o seu jogador favorito atual do Cleveland Cavaliers?</label>
-                <br>
-                <div>
-                    <label for="player-lebron-james">LeBron James</label>
-                    <input type="radio" id="player-lebron-james" name="favorite-player" value="LeBron James">
-                </div>
-                <div>
-                    <label for="player-darius-garland">Darius Garland</label>
-                    <input type="radio" id="player-darius-garland" name="favorite-player" value="Darius Garland">
-                </div>
-                <div>
-                    <label for="player-collin-sexton">Collin Sexton</label>
-                    <input type="radio" id="player-collin-sexton" name="favorite-player" value="Collin Sexton">
-                </div>
-                <div>
-                    <label for="player-evan-mobley">Evan Mobley</label>
-                    <input type="radio" id="player-evan-mobley" name="favorite-player" value="Evan Mobley">
-                </div>
-                <div>
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="player-darius-garland" name="favorite-player" value="Darius Garland">
+                        <label for="player-darius-garland">Darius Garland</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-donovan-mitchell" name="favorite-player" value="Donovan Mitchell">
+                        <label for="player-donovan-mitchell">Donovan Mitchell</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-evan-mobley" name="favorite-player" value="Evan Mobley">
+                        <label for="player-evan-mobley">Evan Mobley</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
                 <label>Quem você considera o maior jogador da história do Cleveland Cavaliers?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-lebron-james">LeBron James</label>
-                    <input type="radio" id="greatest-player-lebron-james" name="greatest-player" value="LeBron James">
-                </div>
-                <div>
-                    <label for="greatest-player-mark-price">Mark Price</label>
-                    <input type="radio" id="greatest-player-mark-price" name="greatest-player" value="Mark Price">
-                </div>
-                <div>
-                    <label for="greatest-player-brad-daugherty">Brad Daugherty</label>
-                    <input type="radio" id="greatest-player-brad-daugherty" name="greatest-player" value="Brad Daugherty">
-                </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-lebron-james" name="greatest-player" value="LeBron James">
+                        <label for="greatest-player-lebron-james">LeBron James</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-kyrie-irving" name="greatest-player" value="Kyrie Irving">
+                        <label for="greatest-player-kyrie-irving">Kyrie Irving</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-damian-james" name="greatest-player" value="Damian James">
+                        <label for="greatest-player-damian-james">Damian James</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada da NBA para o Cleveland Cavaliers?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                <label>Qual é a sua expectativa para a próxima temporada do Cleveland Cavaliers?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                        <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                        <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                        <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
+                    </div>
                 </div>
-                <div>
-                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                </div>
-                <div>
-                    <label for="next-season-expectation-rebuilding">Reconstrução da equipe</label>
-                    <input type="radio" id="next-season-expectation-rebuilding" name="next-season-expectation" value="Reconstrução da equipe">
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
-                </div>
-            </div>
-            <div>
-                <label for="next-season-expectation-question">Quais áreas você acredita que o Cleveland Cavaliers precisa melhorar para ter sucesso na próxima temporada?</label>
-                <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
             </div>
     
-            <div>
-                <label for="next-season-expectation-question">Como você avalia as escolhas do draft feitas pelo Cleveland Cavaliers nesta temporada?</label>
-                <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
+            <div class="form-group">
+                <label>Qual aspecto você acha que o Cleveland Cavaliers deve melhorar para ter sucesso?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                        <label for="improvement-defense">Defesa</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                        <label for="improvement-offense">Ataque</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                        <label for="improvement-coaching">Treinamento e estratégias</label>
+                    </div>
+                </div>
             </div>
     
-            <div>
-                <label for="next-season-expectation-question">Qual é a sua opinião sobre o técnico atual do Cleveland Cavaliers, e o que você gostaria de ver diferente na abordagem técnica da equipe?</label>
-                <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
-            </div>
             <input type="submit" value="Enviar Respostas">
         </form>
     </div>
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+    
+    <div id="thank-you-message">
         <h2>Obrigado pela sua participação!</h2>
         <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Cleveland Cavaliers!</p>
     </div>
+    
 
     <footer>
         <div class="container">
@@ -503,12 +614,12 @@
         <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
       </footer>
       
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    document.getElementById('cavaliers-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Impede o envio padrão do formulário
-      document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
-      document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
-    });
-  </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+        document.getElementById('cavaliers-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+          document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
+          document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
+        });
+      </script>
 </body>

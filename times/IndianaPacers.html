@@ -61,7 +61,123 @@
         }
         
         .formulario {
-            background-color: #fafae9;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #d2e7ff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #FDBB30;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #FDBB30;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(255, 240, 204);
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
         }
    
         @keyframes motion{
@@ -201,7 +317,7 @@
             </div>
 
 <div class="container">
-        <h1 id="CorePlayers"><b>Boston Celtics Core Players</b></h1>
+        <h1 id="CorePlayers"><b>Indiana Pacers Core Players</b></h1>
         <table>
             <thead>
                 <tr>
@@ -398,106 +514,118 @@
               </tr>
             </tbody>
         </table>
-    </div>         
+    </div>        
 
     <div class="formulario">
-        <h2><b>Formulário de Perguntas sobre o Indiana Pacers</b></h2>
-        <form id="pacers-form">
-            <div class="form-group">
-                <label>Qual é o seu jogador favorito atual do Indiana Pacers?</label>
-                <br>
-                <div>
-                    <label for="player-caris-levert">Caris LeVert</label>
-                    <input type="radio" id="player-caris-levert" name="favorite-player" value="Caris LeVert">
-                </div>
-                <div>
-                    <label for="player-malcolm-brogdon">Malcolm Brogdon</label>
-                    <input type="radio" id="player-malcolm-brogdon" name="favorite-player" value="Malcolm Brogdon">
-                </div>
-                <div>
-                    <label for="player-myles-turner">Myles Turner</label>
-                    <input type="radio" id="player-myles-turner" name="favorite-player" value="Myles Turner">
-                </div>
-                <div>
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quem você considera o maior jogador da história do Indiana Pacers?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-reggie-miller">Reggie Miller</label>
-                    <input type="radio" id="greatest-player-reggie-miller" name="greatest-player" value="Reggie Miller">
-                </div>
-                <div>
-                    <label for="greatest-player-paul-george">Paul George</label>
-                    <input type="radio" id="greatest-player-paul-george" name="greatest-player" value="Paul George">
-                </div>
-                <div>
-                    <label for="greatest-player-jermaine-oneal">Jermaine O'Neal</label>
-                    <input type="radio" id="greatest-player-jermaine-oneal" name="greatest-player" value="Jermaine O'Neal">
-                </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada da NBA para o Indiana Pacers?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
-                </div>
-                <div>
-                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                </div>
-                <div>
-                    <label for="next-season-expectation-rebuilding">Reconstrução do time</label>
-                    <input type="radio" id="next-season-expectation-rebuilding" name="next-season-expectation" value="Reconstrução do time">
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
-                </div>
-            </div>
-            <input type="submit" value="Enviar Respostas">
+      <h2 id="quiz"><b>Formulário de Perguntas sobre o Indiana Pacers</b></h2>
+      <form id="pacers-form">
+          <div class="form-group">
+              <label>Qual é o seu jogador favorito atual do Indiana Pacers?</label>
+              <div class="options">
+                  <div class="option-card">
+                      <input type="radio" id="player-haliburton" name="favorite-player" value="Tyrese Haliburton">
+                      <label for="player-haliburton">Tyrese Haliburton</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="player-mathurin" name="favorite-player" value="Benedict Mathurin">
+                      <label for="player-mathurin">Benedict Mathurin</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="player-turner" name="favorite-player" value="Myles Turner">
+                      <label for="player-turner">Myles Turner</label>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <label>Quem você considera o maior jogador da história do Indiana Pacers?</label>
+              <div class="options">
+                  <div class="option-card">
+                      <input type="radio" id="greatest-player-reggie-miller" name="greatest-player" value="Reggie Miller">
+                      <label for="greatest-player-reggie-miller">Reggie Miller</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="greatest-player-david-west" name="greatest-player" value="David West">
+                      <label for="greatest-player-david-west">David West</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="greatest-player-don-buss" name="greatest-player" value="Don Buss">
+                      <label for="greatest-player-don-buss">Don Buss</label>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <label>Qual é a sua expectativa para a próxima temporada do Indiana Pacers?</label>
+              <div class="options">
+                  <div class="option-card">
+                      <input type="radio" id="next-season-expectation-playoffs-pacers" name="next-season-expectation" value="Chegar aos playoffs">
+                      <label for="next-season-expectation-playoffs-pacers">Chegar aos playoffs</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="next-season-expectation-rebuild-pacers" name="next-season-expectation" value="Rebuild do time">
+                      <label for="next-season-expectation-rebuild-pacers">Rebuild do time</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="next-season-expectation-contender-pacers" name="next-season-expectation" value="Ser um time competitivo">
+                      <label for="next-season-expectation-contender-pacers">Ser um time competitivo</label>
+                  </div>
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <label>Qual aspecto você acha que o Indiana Pacers deve melhorar para ter sucesso?</label>
+              <div class="options">
+                  <div class="option-card">
+                      <input type="radio" id="improvement-defense-pacers" name="improvement" value="Defesa">
+                      <label for="improvement-defense-pacers">Defesa</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="improvement-offense-pacers" name="improvement" value="Ataque">
+                      <label for="improvement-offense-pacers">Ataque</label>
+                  </div>
+                  <div class="option-card">
+                      <input type="radio" id="improvement-coaching-pacers" name="improvement" value="Treinamento e estratégias">
+                      <label for="improvement-coaching-pacers">Treinamento e estratégias</label>
+                  </div>
+              </div>
+          </div>
+
+          <input type="submit" value="Enviar Respostas">
         </form>
     </div>
-
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+    
+    <div id="thank-you-message">
         <h2>Obrigado pela sua participação!</h2>
         <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Indiana Pacers!</p>
     </div>
-
+    
     <footer>
-        <div class="container">
-            <ul>
-                <li><a href="/nbaoficial/">Home</a></li>
-                <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
-                <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
-                <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
-            </ul>
-            
-            <div class="social-icons">
-                <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
-                <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
-                <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
-        
-        <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
-      </footer>
-
-  <script>
-    document.getElementById('pacers-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Impede o envio padrão do formulário
-      document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
-      document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
-    });
-  </script>
-
+      <div class="container">
+          <ul>
+              <li><a href="/nbaoficial/">Home</a></li>
+              <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
+              <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
+              <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
+          </ul>
+          
+          <div class="social-icons">
+              <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
+              <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
+              <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+              <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+      </div>
+      
+      <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      document.getElementById('pacers-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
+        document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
+      });
+    </script>
 </body>

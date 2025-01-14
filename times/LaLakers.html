@@ -61,9 +61,124 @@
         }
         
         .formulario {
-            background-color: #ffefce;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #f6ebff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
         }
-   
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #FDB927;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #FDB927;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffe8b7;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+        }
 
         @keyframes motion{
             0%{
@@ -405,127 +520,98 @@
       </table>
   </div>
   
-
-    <div class="formulario">
-        <h2><b>Formulário de Perguntas sobre o Los Angeles Lakers</b></h2>
-        <form id="lakers-form">
-            <div class="form-group">
-                <label>Qual é o seu jogador favorito atual do Los Angeles Lakers?</label>
-                <br>
-                <div>
-                    <label for="player-lebron-james">LeBron James</label>
-                    <input type="radio" id="player-lebron-james" name="favorite-player" value="LeBron James">
-                    
-                </div>
-                <div>
-                    <label for="player-anthony-davis">Anthony Davis</label>
-                    <input type="radio" id="player-anthony-davis" name="favorite-player" value="Anthony Davis">
-                    
-                </div>
-                <div>
-                    <label for="player-russell-westbrook">Russell Westbrook</label>
-                    <input type="radio" id="player-russell-westbrook" name="favorite-player" value="Russell Westbrook">
-                    
-                </div>
-                <div>
-                    
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
-                    
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quem você considera o maior jogador da história do Los Angeles Lakers?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-magic-johnson">Magic Johnson</label>
-                    <input type="radio" id="greatest-player-magic-johnson" name="greatest-player" value="Magic Johnson">    
-                </div>
-                <div>   
-                    <label for="greatest-player-kobe-bryant">Kobe Bryant</label>
-                    <input type="radio" id="greatest-player-kobe-bryant" name="greatest-player" value="Kobe Bryant">
-                </div>
-                <div>
-                    <label for="greatest-player-kareem-abdul-jabbar">Kareem Abdul-Jabbar</label>
-                    <input type="radio" id="greatest-player-kareem-abdul-jabbar" name="greatest-player" value="Kareem Abdul-Jabbar">
-                </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada do Los Angeles Lakers?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-championship">Vencer o campeonato</label>
-                    <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
-                    
-                </div>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
-                    
-                </div>
-                <div>
-                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                    
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
-                </div>
-                <br>
-                <div>
-                    <label for="next-season-expectation-question">Quais áreas você acredita que o Los Angeles Lakers precisa melhorar para ter sucesso na próxima temporada?</label>
-                    <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
-                </div>
-                <br>
-                <div>
-                    <label for="next-season-expectation-question">Como você avalia as contratações feitas pelo Los Angeles Lakers nesta offseason?</label>
-                    <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
-                </div>
-                <br>
-                <div>
-                    <label for="next-season-expectation-question">Qual é a sua opinião sobre o treinador atual do Los Angeles Lakers, e o que você gostaria de ver diferente na abordagem técnica da equipe?</label>
-                    <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
-                </div>
-            </div>
-            <input type="submit" value="Enviar Respostas">
-        </form>
-    </div>
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
-      <h2>Obrigado pela sua participação!</h2>
-      <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Los Angeles Lakers!</p>
-  </div>
-
-  <footer>
-      <div class="container">
-          <ul>
-              <li><a href="/nbaoficial/">Home</a></li>
-              <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
-              <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
-              <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
-          </ul>
-          
-          <div class="social-icons">
-              <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
-              <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
-              <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-              <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+  <div class="formulario">
+  <h2 id="quiz"><b>Formulário de Perguntas sobre o LA Lakers</b></h2>
+  <form id="lakers-form">
+      <div class="form-group">
+          <label>Qual é o seu jogador favorito atual do LA Lakers?</label>
+          <div class="options">
+              <div class="option-card">
+                  <input type="radio" id="player-lebron-james" name="favorite-player" value="LeBron James">
+                  <label for="player-lebron-james">LeBron James</label>
+              </div>
+              <div class="option-card">
+                  <input type="radio" id="player-anthony-davis" name="favorite-player" value="Anthony Davis">
+                  <label for="player-anthony-davis">Anthony Davis</label>
+              </div>
+              <div class="option-card">
+                  <input type="radio" id="player-dangelo-russell" name="favorite-player" value="D'Angelo Russell">
+                  <label for="player-dangelo-russell">D'Angelo Russell</label>
+              </div>
           </div>
       </div>
-      
-      <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
-    </footer>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-        <script>
-          document.getElementById('lakers-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Impede o envio padrão do formulário
-            document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
-            document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
-          });
-        </script>
+      <div class="form-group">
+          <label>Quem você considera o maior jogador da história do LA Lakers?</label>
+          <div class="options">
+              <div class="option-card">
+                  <input type="radio" id="greatest-player-kareem-abdul-jabbar" name="greatest-player" value="Kareem Abdul-Jabbar">
+                  <label for="greatest-player-kareem-abdul-jabbar">Kareem Abdul-Jabbar</label>
+              </div>
+              <div class="option-card">
+                  <input type="radio" id="greatest-player-magic-johnson" name="greatest-player" value="Magic Johnson">
+                  <label for="greatest-player-magic-johnson">Magic Johnson</label>
+              </div>
+              <div class="option-card">
+                  <input type="radio" id="greatest-player-kobe-bryant" name="greatest-player" value="Kobe Bryant">
+                  <label for="greatest-player-kobe-bryant">Kobe Bryant</label>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label>Qual é a sua expectativa para a próxima temporada do LA Lakers?</label>
+          <div class="options">
+              <div class="option-card">
+                  <input type="radio" id="next-season-expectation-championship-lakers" name="next-season-expectation" value="Vencer o campeonato">
+                  <label for="next-season-expectation-championship-lakers">Vencer o campeonato</label>
+              </div>
+              <div class="option-card">
+                  <input type="radio" id="next-season-expectation-playoffs-lakers" name="next-season-expectation" value="Chegar aos playoffs">
+                  <label for="next-season-expectation-playoffs-lakers">Chegar aos playoffs</label>
+              </div>
+              <div class="option-card">
+                  <input type="radio" id="next-season-expectation-development-lakers" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                  <label for="next-season-expectation-development-lakers">Desenvolvimento dos jogadores</label>
+                </div>
+            </div>
+        </div>
+
+        <input type="submit" value="Enviar Respostas">
+      </form>
+  </div>
+  
+  <div id="thank-you-message">
+      <h2>Obrigado pela sua participação!</h2>
+      <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Indiana Pacers!</p>
+  </div>
+  
+  <footer>
+    <div class="container">
+        <ul>
+            <li><a href="/nbaoficial/">Home</a></li>
+            <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
+            <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
+            <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
+        </ul>
+        
+        <div class="social-icons">
+            <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
+            <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+    
+    <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
+  </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    document.getElementById('lakers-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+      document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
+      document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
+    });
+  </script>
 </body>

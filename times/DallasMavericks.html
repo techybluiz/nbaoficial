@@ -61,8 +61,124 @@
     }
     
     .formulario {
-        background-color: #d1e9fa;
-    }
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #d4eeff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #00538C;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #01416b;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #156194;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+        }
 
     @keyframes motion{
         0%{
@@ -404,85 +520,89 @@
     
     
     <div class="formulario">
-        <h2><b>Formulário de Perguntas sobre o Dallas Mavericks</b></h2>
+        <h2 id="quiz"><b>Formulário de Perguntas sobre o Dallas Mavericks</b></h2>
         <form id="mavericks-form">
             <div class="form-group">
                 <label>Qual é o seu jogador favorito atual do Dallas Mavericks?</label>
-                <br>
-                <div>
-                    <label for="player-luka-doncic">Luka Dončić</label>
-                    <input type="radio" id="player-luka-doncic" name="favorite-player" value="Luka Dončić">
-                </div>
-                <div>
-                    <label for="player-kyrie-irving">Kyrie Irving</label>
-                    <input type="radio" id="player-kyrie-irving" name="favorite-player" value="Kyrie Irving">
-                </div>
-                <div>
-                    <label for="player-dorian-finnie-smith">Dorian Finney-Smith</label>
-                    <input type="radio" id="player-dorian-finnie-smith" name="favorite-player" value="Dorian Finney-Smith">
-                </div>
-                <div>
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="player-luka-doncic" name="favorite-player" value="Luka Dončić">
+                        <label for="player-luka-doncic">Luka Dončić</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-kyrie-irving" name="favorite-player" value="Kyrie Irving">
+                        <label for="player-kyrie-irving">Kyrie Irving</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-dorian-finney-smith" name="favorite-player" value="Dorian Finney-Smith">
+                        <label for="player-dorian-finney-smith">Dorian Finney-Smith</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
                 <label>Quem você considera o maior jogador da história do Dallas Mavericks?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-dirks">Dirk Nowitzki</label>
-                    <input type="radio" id="greatest-player-dirks" name="greatest-player" value="Dirk Nowitzki">
-                </div>
-                <div>
-                    <label for="greatest-player-jason-kidd">Jason Kidd</label>
-                    <input type="radio" id="greatest-player-jason-kidd" name="greatest-player" value="Jason Kidd">
-                </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-dirk-nowitzki" name="greatest-player" value="Dirk Nowitzki">
+                        <label for="greatest-player-dirk-nowitzki">Dirk Nowitzki</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-jason-kidd" name="greatest-player" value="Jason Kidd">
+                        <label for="greatest-player-jason-kidd">Jason Kidd</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-sean-may" name="greatest-player" value="Sean May">
+                        <label for="greatest-player-sean-may">Sean May</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada da NBA para o Dallas Mavericks?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                <label>Qual é a sua expectativa para a próxima temporada do Dallas Mavericks?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                        <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                        <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                        <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
+                    </div>
                 </div>
-                <div>
-                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                </div>
-                <div>
-                    <label for="next-season-expectation-rebuilding">Reconstrução da equipe</label>
-                    <input type="radio" id="next-season-expectation-rebuilding" name="next-season-expectation" value="Reconstrução da equipe">
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
-                </div>
-            </div>
-            <div>
-                <label for="improvement-areas">Quais áreas você acredita que o Dallas Mavericks precisa melhorar para ter sucesso na próxima temporada?</label>
-                <input type="text" id="improvement-areas" name="improvement-areas" placeholder="Digite a resposta">
             </div>
     
-            <div>
-                <label for="draft-choices">Como você avalia as escolhas do draft feitas pelo Dallas Mavericks nesta temporada?</label>
-                <input type="text" id="draft-choices" name="draft-choices" placeholder="Digite a resposta">
+            <div class="form-group">
+                <label>Qual aspecto você acha que o Dallas Mavericks deve melhorar para ter sucesso?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                        <label for="improvement-defense">Defesa</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                        <label for="improvement-offense">Ataque</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                        <label for="improvement-coaching">Treinamento e estratégias</label>
+                    </div>
+                </div>
             </div>
     
-            <div>
-                <label for="coach-opinion">Qual é a sua opinião sobre o técnico atual do Dallas Mavericks, e o que você gostaria de ver diferente na abordagem técnica da equipe?</label>
-                <input type="text" id="coach-opinion" name="coach-opinion" placeholder="Digite a resposta">
-            </div>
             <input type="submit" value="Enviar Respostas">
         </form>
     </div>
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+    
+    <div id="thank-you-message">
         <h2>Obrigado pela sua participação!</h2>
         <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Dallas Mavericks!</p>
     </div>
+    
 
     <footer>
         <div class="container">
@@ -504,12 +624,12 @@
         <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
       </footer>
       
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    document.getElementById('mavericks-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Impede o envio padrão do formulário
-      document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
-      document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
-    });
-  </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+        document.getElementById('mavericks-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+          document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
+          document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
+        });
+      </script>
 </body>

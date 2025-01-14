@@ -56,12 +56,127 @@
         }
 
         .title{
-            color: #E03A3E;
-
+            color: #af0003;
         }
-        
+
         .formulario {
-            background-color: #ffe8e8;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffecec;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #af0003;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #c70000;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #fc4646;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
         }
    
 
@@ -421,73 +536,85 @@
         <form id="hawks-form">
             <div class="form-group">
                 <label>Qual é o seu jogador favorito atual do Atlanta Hawks?</label>
-                <br>
-                <div>
-                    <label for="player-trae-young">Trae Young</label>
-                    <input type="radio" id="player-trae-young" name="favorite-player" value="Trae Young">
-                </div>
-                <div>
-                    <label for="player-john-collins">John Collins</label>
-                    <input type="radio" id="player-john-collins" name="favorite-player" value="John Collins">
-                </div>
-                <div>
-                    <label for="player-bogdan-bogdanovic">Bogdan Bogdanovic</label>
-                    <input type="radio" id="player-bogdan-bogdanovic" name="favorite-player" value="Bogdan Bogdanovic">
-                </div>
-                <div>
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="player-trae-young" name="favorite-player" value="Trae Young">
+                        <label for="player-trae-young">Trae Young</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-dejounte-murray" name="favorite-player" value="Dejounte Murray">
+                        <label for="player-dejounte-murray">Dejounte Murray</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-john-collins" name="favorite-player" value="John Collins">
+                        <label for="player-john-collins">John Collins</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
                 <label>Quem você considera o maior jogador da história do Atlanta Hawks?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-dominique-wilkins">Dominique Wilkins</label>
-                    <input type="radio" id="greatest-player-dominique-wilkins" name="greatest-player" value="Dominique Wilkins">
-                </div>
-                <div>
-                    <label for="greatest-player-bob-pettit">Bob Pettit</label>
-                    <input type="radio" id="greatest-player-bob-pettit" name="greatest-player" value="Bob Pettit">
-                </div>
-                <div>
-                    <label for="greatest-player-paul-millsap">Paul Millsap</label>
-                    <input type="radio" id="greatest-player-paul-millsap" name="greatest-player" value="Paul Millsap">
-                </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-dominique-wilkins" name="greatest-player" value="Dominique Wilkins">
+                        <label for="greatest-player-dominique-wilkins">Dominique Wilkins</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-al-horford" name="greatest-player" value="Al Horford">
+                        <label for="greatest-player-al-horford">Al Horford</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-dok" name="greatest-player" value="Joe Johnson">
+                        <label for="greatest-player-joe-johnson">Joe Johnson</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada da NBA?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-championship">Vencer o campeonato</label>
-                    <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
-                </div>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
-                </div>
-                <div>
-                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
+                <label>Qual é a sua expectativa para a próxima temporada do Atlanta Hawks?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                        <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                        <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                        <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
+                    </div>
                 </div>
             </div>
+    
+            <div class="form-group">
+                <label>Qual aspecto você acha que o Atlanta Hawks deve melhorar para ter sucesso?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                        <label for="improvement-defense">Defesa</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                        <label for="improvement-offense">Ataque</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                        <label for="improvement-coaching">Treinamento e estratégias</label>
+                    </div>
+                </div>
+            </div>
+    
             <input type="submit" value="Enviar Respostas">
         </form>
     </div>
-
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+    
+    <div id="thank-you-message">
         <h2>Obrigado pela sua participação!</h2>
         <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Atlanta Hawks!</p>
     </div>
-
+    
     <footer>
         <div class="container">
             <ul>
@@ -508,11 +635,12 @@
         <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
       </footer>
 
-  <script>
-    document.getElementById('hawks-form').addEventListener('submit', function (event) {
-      event.preventDefault(); // Impede o envio padrão do formulário
-      document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
-      document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
-    });
-  </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+        document.getElementById('hawks-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+          document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
+          document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
+        });
+      </script>
 </body>

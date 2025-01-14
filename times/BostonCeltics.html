@@ -56,12 +56,127 @@
         }
 
         .title{
-            color: #007A33;
-
+            color: #208801;
         }
-        
+
         .formulario {
-            background-color: #e8ffea;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #e6fff1;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #208801;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #3d9461;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005021;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
         }
    
 
@@ -396,88 +511,90 @@
         </table>
     </div>
     
-
     <div class="formulario">
         <h2 id="quiz"><b>Formulário de Perguntas sobre o Boston Celtics</b></h2>
         <form id="celtics-form">
             <div class="form-group">
                 <label>Qual é o seu jogador favorito atual do Boston Celtics?</label>
-                <br>
-                <div>
-                    <label for="player-jayson-tatum">Jayson Tatum</label>
-                    <input type="radio" id="player-jayson-tatum" name="favorite-player" value="Jayson Tatum">
-                    
-                </div>
-                <div>
-                    <label for="player-jaylen-brown">Jaylen Brown</label>
-                    <input type="radio" id="player-jaylen-brown" name="favorite-player" value="Jaylen Brown">
-                    
-                </div>
-                <div>
-                    <label for="player-marcus-smart">Marcus Smart</label>
-                    <input type="radio" id="player-marcus-smart" name="favorite-player" value="Marcus Smart">
-                    
-                </div>
-                <div>
-                    
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
-                    
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="player-jayson-tatum" name="favorite-player" value="Jayson Tatum">
+                        <label for="player-jayson-tatum">Jayson Tatum</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-jaylen-brown" name="favorite-player" value="Jaylen Brown">
+                        <label for="player-jaylen-brown">Jaylen Brown</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-marcus-smart" name="favorite-player" value="Marcus Smart">
+                        <label for="player-marcus-smart">Marcus Smart</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
                 <label>Quem você considera o maior jogador da história do Boston Celtics?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-bill-russell">Bill Russell</label>
-                    <input type="radio" id="greatest-player-bill-russell" name="greatest-player" value="Bill Russell">    
-                </div>
-                <div>   
-                    <label for="greatest-player-larry-bird">Larry Bird</label>
-                    <input type="radio" id="greatest-player-larry-bird" name="greatest-player" value="Larry Bird">
-                </div>
-                <div>
-                    <br>
-                    <label for="greatest-player-paul-pierce">Paul Pierce</label>
-                    <input type="radio" id="greatest-player-paul-pierce" name="greatest-player" value="Paul Pierce">
-                </div>
-                <div>
-                    <br>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-bill-russell" name="greatest-player" value="Bill Russell">
+                        <label for="greatest-player-bill-russell">Bill Russell</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-larry-bird" name="greatest-player" value="Larry Bird">
+                        <label for="greatest-player-larry-bird">Larry Bird</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-paul-pierce" name="greatest-player" value="Paul Pierce">
+                        <label for="greatest-player-paul-pierce">Paul Pierce</label>
+                    </div>
                 </div>
             </div>
+    
             <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada da NBA?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-championship">Vencer o campeonato</label>
-                    <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
-                    
-                </div>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
-                    
-                </div>
-                <div>
-                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                    
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
+                <label>Qual é a sua expectativa para a próxima temporada do Boston Celtics?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                        <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                        <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                        <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
+                    </div>
                 </div>
             </div>
+    
+            <div class="form-group">
+                <label>Qual aspecto você acha que o Boston Celtics deve melhorar para ter sucesso?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                        <label for="improvement-defense">Defesa</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                        <label for="improvement-offense">Ataque</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                        <label for="improvement-coaching">Treinamento e estratégias</label>
+                    </div>
+                </div>
+            </div>
+    
             <input type="submit" value="Enviar Respostas">
         </form>
     </div>
-
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+    
+    <div id="thank-you-message">
         <h2>Obrigado pela sua participação!</h2>
         <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Boston Celtics!</p>
     </div>
+    
 
     <footer>
         <div class="container">
@@ -499,12 +616,12 @@
         <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
       </footer>
 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-          <script>
-            document.getElementById('celtics-form').addEventListener('submit', function (event) {
-              event.preventDefault(); // Impede o envio padrão do formulário
-              document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
-              document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
-            });
-          </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script>
+        document.getElementById('celtics-form').addEventListener('submit', function (event) {
+          event.preventDefault(); // Impede o envio padrão do formulário
+          document.querySelector('.formulario').style.display = 'none'; // Esconde o formulário
+          document.getElementById('thank-you-message').style.display = 'block'; // Exibe a mensagem de agradecimento
+        });
+      </script>
 </body>
