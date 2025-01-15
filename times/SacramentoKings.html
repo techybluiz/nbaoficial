@@ -61,7 +61,123 @@
         }
         
         .formulario {
-            background-color: #ede8ff;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #eedfff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #5A2D8C;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #5A2D8C;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #efe1ff;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
         }
    
 
@@ -389,88 +505,90 @@
     </div>
     
     
-
-
     <div class="formulario">
-        <h2><b>Formulário de Perguntas sobre o Sacramento Kings</b></h2>
+        <h2 id="quiz"><b>Formulário de Perguntas sobre os Sacramento Kings</b></h2>
         <form id="kings-form">
             <div class="form-group">
                 <label>Qual é o seu jogador favorito atual do Sacramento Kings?</label>
-                <div>
-                    <label for="player-deaaron-fox">De'Aaron Fox</label>
-                    <input type="radio" id="player-deaaron-fox" name="favorite-player" value="De'Aaron Fox">
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="player-de-aaron-fox" name="favorite-player" value="De'Aaron Fox">
+                        <label for="player-de-aaron-fox">De'Aaron Fox</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-domantas-sabonis" name="favorite-player" value="Domantas Sabonis">
+                        <label for="player-domantas-sabonis">Domantas Sabonis</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="player-keegan-murray" name="favorite-player" value="Keegan Murray">
+                        <label for="player-keegan-murray">Keegan Murray</label>
+                    </div>
                 </div>
-                <div>
-                    <label for="player-domantas-sabonis">Domantas Sabonis</label>
-                    <input type="radio" id="player-domantas-sabonis" name="favorite-player" value="Domantas Sabonis">
-                </div>
-                <div>
-                    <label for="player-keegan-murray">Keegan Murray</label>
-                    <input type="radio" id="player-keegan-murray" name="favorite-player" value="Keegan Murray">
-                </div>
-                <div>
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Quem você considera o maior jogador da história do Sacramento Kings?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-chris-webber">Chris Webber</label>
-                    <input type="radio" id="greatest-player-chris-webber" name="greatest-player" value="Chris Webber">
-                </div>
-                <div>
-                    <label for="greatest-player-pete-maravich">Pete Maravich</label>
-                    <input type="radio" id="greatest-player-pete-maravich" name="greatest-player" value="Pete Maravich">
-                </div>
-                <div>
-                    <label for="greatest-player-rex-chapman">Rex Chapman</label>
-                    <input type="radio" id="greatest-player-rex-chapman" name="greatest-player" value="Rex Chapman">
-                </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada do Sacramento Kings?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
-                </div>
-                <div>
-                    <label for="next-season-expectation-developing">Desenvolvimento dos jogadores</label>
-                    <input type="radio" id="next-season-expectation-developing" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
-                </div>
-            </div>
-            <div>
-                <label for="next-season-expectation-question">Quais áreas você acredita que o Sacramento Kings precisa melhorar para ter sucesso na próxima temporada?</label>
-                <input type="text" id="question-next-season-expectation" name="question-next-season-expectation" placeholder="Digite a resposta">
             </div>
     
-            <div>
-                <label for="offseason-acquisitions">Como você avalia as contratações feitas pelo Sacramento Kings nesta offseason?</label>
-                <input type="text" id="question-offseason-acquisitions" name="question-offseason-acquisitions" placeholder="Digite a resposta">
+            <div class="form-group">
+                <label>Quem você considera o maior jogador da história dos Sacramento Kings?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-chris-webber" name="greatest-player" value="Chris Webber">
+                        <label for="greatest-player-chris-webber">Chris Webber</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-vlade-divac" name="greatest-player" value="Vlade Divac">
+                        <label for="greatest-player-vlade-divac">Vlade Divac</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="greatest-player-peja-stojakovic" name="greatest-player" value="Peja Stojaković">
+                        <label for="greatest-player-peja-stojakovic">Peja Stojaković</label>
+                    </div>
+                </div>
             </div>
     
-            <div>
-                <label for="coach-evaluation">Qual é a sua opinião sobre o treinador atual do Sacramento Kings, Mike Brown, e o que você gostaria de ver diferente na abordagem técnica da equipe?</label>
-                <input type="text" id="question-coach-evaluation" name="question-coach-evaluation" placeholder="Digite a resposta">
+            <div class="form-group">
+                <label>Qual é a sua expectativa para a próxima temporada dos Sacramento Kings?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                        <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                        <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                        <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label>Qual aspecto você acha que o Sacramento Kings deve melhorar para ter sucesso?</label>
+                <div class="options">
+                    <div class="option-card">
+                        <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                        <label for="improvement-defense">Defesa</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                        <label for="improvement-offense">Ataque</label>
+                    </div>
+                    <div class="option-card">
+                        <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                        <label for="improvement-coaching">Treinamento e estratégias</label>
+                    </div>
+                </div>
             </div>
     
             <input type="submit" value="Enviar Respostas">
         </form>
     </div>
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+    
+    <div id="thank-you-message">
         <h2>Obrigado pela sua participação!</h2>
         <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Sacramento Kings!</p>
     </div>
+    
     
     <footer>
         <div class="container">

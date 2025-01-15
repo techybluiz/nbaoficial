@@ -61,10 +61,124 @@
         }
         
         .formulario {
-            background-color: #dbdbdb;
+            max-width: 880px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffd8de;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
         }
-   
 
+        .formulario:hover {
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .option-card {
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-card:hover {
+            background-color: #ffffff;
+            border-color: #1D1160;
+        }
+
+        .option-card input[type="radio"] {
+            display: none;
+        }
+
+        .option-card input[type="radio"]:checked + label {
+            font-weight: bold;
+            color: #b10000;
+        }
+
+        .option-card label {
+            display: block;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f5f5f5;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #002B5C;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3c7ec9;
+        }
+
+        #thank-you-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            border-radius: 10px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .formulario {
+                padding: 20px;
+            }
+
+            .option-card {
+                padding: 15px;
+            }
+
+            label {
+                font-size: 14px;
+            }
+        }
         @keyframes motion{
             0%{
                 color: #002B5C;
@@ -419,71 +533,90 @@
     </table>
 </div>
 
-
-    <div class="formulario">
-        <h2 id="quiz"><b>Formulário de Perguntas sobre o Washington Wizards</b></h2>
-        <form id="wizards-form">
-            <div class="form-group">
-                <label>Qual é o seu jogador favorito atual do Washington Wizards?</label>
-                <br>
-                <div>
-                    <label for="player-bradley-beal">Bradley Beal</label>
+<div class="formulario">
+    <h2 id="quiz"><b>Formulário de Perguntas sobre o Washington Wizards</b></h2>
+    <form id="wizards-form">
+        <div class="form-group">
+            <label>Qual é o seu jogador favorito atual do Washington Wizards?</label>
+            <div class="options">
+                <div class="option-card">
                     <input type="radio" id="player-bradley-beal" name="favorite-player" value="Bradley Beal">
+                    <label for="player-bradley-beal">Bradley Beal</label>
                 </div>
-                <div>
-                    <label for="player-kuzma">Kyle Kuzma</label>
-                    <input type="radio" id="player-kuzma" name="favorite-player" value="Kyle Kuzma">
+                <div class="option-card">
+                    <input type="radio" id="player-kyle-kuzma" name="favorite-player" value="Kyle Kuzma">
+                    <label for="player-kyle-kuzma">Kyle Kuzma</label>
                 </div>
-                <div>
-                    <label for="player-christie">Kristaps Porzingis</label>
-                    <input type="radio" id="player-christie" name="favorite-player" value="Kristaps Porzingis">
-                </div>
-                <div>
-                    <label for="player-other">Outro:</label>
-                    <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
+                <div class="option-card">
+                    <input type="radio" id="player-chris-davis" name="favorite-player" value="Kristaps Porzingis">
+                    <label for="player-chris-davis">Kristaps Porzingis</label>
                 </div>
             </div>
-            <div class="form-group">
-                <label>Quem você considera o maior jogador da história do Washington Wizards?</label>
-                <br>
-                <div>
-                    <label for="greatest-player-john-wall">John Wall</label>
+        </div>
+
+        <div class="form-group">
+            <label>Quem você considera o maior jogador da história do Washington Wizards?</label>
+            <div class="options">
+                <div class="option-card">
                     <input type="radio" id="greatest-player-john-wall" name="greatest-player" value="John Wall">
+                    <label for="greatest-player-john-wall">John Wall</label>
                 </div>
-                <div>
-                    <label for="greatest-player-gilbert-arenas">Gilbert Arenas</label>
-                    <input type="radio" id="greatest-player-gilbert-arenas" name="greatest-player" value="Gilbert Arenas">
+                <div class="option-card">
+                    <input type="radio" id="greatest-player-elvin-hayes" name="greatest-player" value="Elvin Hayes">
+                    <label for="greatest-player-elvin-hayes">Elvin Hayes</label>
                 </div>
-                <div>
-                    <label for="greatest-player-other">Outro:</label>
-                    <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
+                <div class="option-card">
+                    <input type="radio" id="greatest-player-wes-unseld" name="greatest-player" value="Wes Unseld">
+                    <label for="greatest-player-wes-unseld">Wes Unseld</label>
                 </div>
             </div>
-            <div class="form-group">
-                <label>Qual é a sua expectativa para a próxima temporada da NBA?</label>
-                <br>
-                <div>
-                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+        </div>
+
+        <div class="form-group">
+            <label>Qual é a sua expectativa para a próxima temporada do Washington Wizards?</label>
+            <div class="options">
+                <div class="option-card">
+                    <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                    <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                </div>
+                <div class="option-card">
                     <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
                 </div>
-                <div>
-                    <label for="next-season-expectation-rebuilding">Reformulação do time</label>
-                    <input type="radio" id="next-season-expectation-rebuilding" name="next-season-expectation" value="Reformulação do time">
-                </div>
-                <div>
-                    <label for="next-season-expectation-other">Outro:</label>
-                    <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
+                <div class="option-card">
+                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
                 </div>
             </div>
-            <input type="submit" value="Enviar Respostas">
-        </form>
-    </div>
-    
-    <div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
-        <h2>Obrigado pela sua participação!</h2>
-        <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Washington Wizards!</p>
-    </div>
-    
+        </div>
+
+        <div class="form-group">
+            <label>Qual aspecto você acha que o Washington Wizards deve melhorar para ter sucesso?</label>
+            <div class="options">
+                <div class="option-card">
+                    <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                    <label for="improvement-defense">Defesa</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                    <label for="improvement-offense">Ataque</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                    <label for="improvement-coaching">Treinamento e estratégias</label>
+                </div>
+            </div>
+        </div>
+
+        <input type="submit" value="Enviar Respostas">
+    </form>
+</div>
+
+<div id="thank-you-message">
+    <h2>Obrigado pela sua participação!</h2>
+    <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelo Washington Wizards!</p>
+</div>
+
 
     <footer>
         <div class="container">

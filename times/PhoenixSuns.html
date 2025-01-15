@@ -64,7 +64,7 @@
             max-width: 880px;
             margin: 40px auto;
             padding: 30px;
-            background-color: #e6fff1;
+            background-color: #e8e4ff;
             border-radius: 12px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             transition: 0.3s ease;
@@ -104,7 +104,7 @@
 
         .option-card:hover {
             background-color: #ffffff;
-            border-color: #208801;
+            border-color: #1D1160;
         }
 
         .option-card input[type="radio"] {
@@ -143,7 +143,7 @@
             display: block;
             width: 100%;
             padding: 14px;
-            background-color: #002B5C;
+            background-color: #E56020;
             color: #fff;
             font-size: 18px;
             font-weight: bold;
@@ -154,7 +154,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #005eca;
+            background-color: #fca881;
         }
 
         #thank-you-message {
@@ -521,73 +521,81 @@
     <form id="suns-form">
         <div class="form-group">
             <label>Qual é o seu jogador favorito atual do Phoenix Suns?</label>
-            <br>
-            <div>
-                <label for="player-grayson-allen">Grayson Allen</label>
-                <input type="radio" id="player-grayson-allen" name="favorite-player" value="Grayson Allen">
-            </div>
-            <div>
-                <label for="player-bradley-beal">Bradley Beal</label>
-                <input type="radio" id="player-bradley-beal" name="favorite-player" value="Bradley Beal">
-            </div>
-            <div>
-                <label for="player-devin-booker">Devin Booker</label>
-                <input type="radio" id="player-devin-booker" name="favorite-player" value="Devin Booker">
-            </div>
-            <div>
-                <label for="player-kevin-durant">Kevin Durant</label>
-                <input type="radio" id="player-kevin-durant" name="favorite-player" value="Kevin Durant">
-            </div>
-            <div>
-                <label for="player-other">Outro:</label>
-                <input type="text" id="other-player" name="other-player" placeholder="Digite o nome">
+            <div class="options">
+                <div class="option-card">
+                    <input type="radio" id="player-devin-booker" name="favorite-player" value="Devin Booker">
+                    <label for="player-devin-booker">Devin Booker</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="player-kevin-durant" name="favorite-player" value="Kevin Durant">
+                    <label for="player-kevin-durant">Kevin Durant</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="player-bradley-beal" name="favorite-player" value="Bradley Beal">
+                    <label for="player-bradley-beal">Bradley Beal</label>
+                </div>
             </div>
         </div>
+
         <div class="form-group">
             <label>Quem você considera o maior jogador da história do Phoenix Suns?</label>
-            <br>
-            <div>
-                <label for="greatest-player-devin-booker">Devin Booker</label>
-                <input type="radio" id="greatest-player-devin-booker" name="greatest-player" value="Devin Booker">
-            </div>
-            <div>
-                <label for="greatest-player-charles-barkley">Charles Barkley</label>
-                <input type="radio" id="greatest-player-charles-barkley" name="greatest-player" value="Charles Barkley">
-            </div>
-            <div>
-                <label for="greatest-player-kevin-johnson">Kevin Johnson</label>
-                <input type="radio" id="greatest-player-kevin-johnson" name="greatest-player" value="Kevin Johnson">
-            </div>
-            <div>
-                <label for="greatest-player-other">Outro:</label>
-                <input type="text" id="other-greatest-player" name="other-greatest-player" placeholder="Digite o nome">
+            <div class="options">
+                <div class="option-card">
+                    <input type="radio" id="greatest-player-charles-barkley" name="greatest-player" value="Charles Barkley">
+                    <label for="greatest-player-charles-barkley">Charles Barkley</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="greatest-player-steve-nash" name="greatest-player" value="Steve Nash">
+                    <label for="greatest-player-steve-nash">Steve Nash</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="greatest-player-amare-stoudemire" name="greatest-player" value="Amar'e Stoudemire">
+                    <label for="greatest-player-amare-stoudemire">Amar'e Stoudemire</label>
+                </div>
             </div>
         </div>
+
         <div class="form-group">
-            <label>Qual é a sua expectativa para a próxima temporada da NBA?</label>
-            <br>
-            <div>
-                <label for="next-season-expectation-championship">Vencer o campeonato</label>
-                <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
-            </div>
-            <div>
-                <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
-                <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
-            </div>
-            <div>
-                <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
-                <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
-            </div>
-            <div>
-                <label for="next-season-expectation-other">Outro:</label>
-                <input type="text" id="other-next-season-expectation" name="other-next-season-expectation" placeholder="Digite a expectativa">
+            <label>Qual é a sua expectativa para a próxima temporada do Phoenix Suns?</label>
+            <div class="options">
+                <div class="option-card">
+                    <input type="radio" id="next-season-expectation-championship" name="next-season-expectation" value="Vencer o campeonato">
+                    <label for="next-season-expectation-championship">Vencer o campeonato</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="next-season-expectation-playoffs" name="next-season-expectation" value="Chegar aos playoffs">
+                    <label for="next-season-expectation-playoffs">Chegar aos playoffs</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="next-season-expectation-development" name="next-season-expectation" value="Desenvolvimento dos jogadores">
+                    <label for="next-season-expectation-development">Desenvolvimento dos jogadores</label>
+                </div>
             </div>
         </div>
+
+        <div class="form-group">
+            <label>Qual aspecto você acha que o Phoenix Suns deve melhorar para ter sucesso?</label>
+            <div class="options">
+                <div class="option-card">
+                    <input type="radio" id="improvement-defense" name="improvement" value="Defesa">
+                    <label for="improvement-defense">Defesa</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="improvement-offense" name="improvement" value="Ataque">
+                    <label for="improvement-offense">Ataque</label>
+                </div>
+                <div class="option-card">
+                    <input type="radio" id="improvement-coaching" name="improvement" value="Treinamento e estratégias">
+                    <label for="improvement-coaching">Treinamento e estratégias</label>
+                </div>
+            </div>
+        </div>
+
         <input type="submit" value="Enviar Respostas">
     </form>
 </div>
 
-<div id="thank-you-message" style="display: none; text-align: center; margin-top: 20px;">
+<div id="thank-you-message">
     <h2>Obrigado pela sua participação!</h2>
     <p>Suas respostas foram enviadas com sucesso. Continuamos juntos torcendo pelos Phoenix Suns!</p>
 </div>
