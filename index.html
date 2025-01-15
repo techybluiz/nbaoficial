@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,9 +25,42 @@
       padding-left: 10px;
       padding-right: 10px;
     }
-      a.nav-link{
-        color: #000000;
-      }
+    header {
+            background-color: #ffffff;
+            padding: 15px 0;
+            color: #000000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .navbar-brand {
+            flex-shrink: 0; 
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style-type: none;
+            margin-left: auto; 
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 20px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000000 !important;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #b40000 !important;
+        }
       .bg-light{
         background-color: #A7A6A6;
       }
@@ -72,7 +104,6 @@
           margin: 0 10px; 
       }
       .tema{
-        font-family: "Roboto Mono", monospace;
         color: #790000;
         padding-left: 35px;
         margin-top: 10px;
@@ -186,7 +217,7 @@
   transition: color 0.3s ease;
   }
   footer ul li a:hover {
-  color: #5f00cc;
+  color: #790000;
   }
   
   footer .social-icons a {
@@ -197,7 +228,7 @@
   transition: color 0.2s ease;
   }
   footer .social-icons a:hover {
-  color: #4a2fc4;
+  color: #790000;
   }
   footer p {
   margin-top: 20px;

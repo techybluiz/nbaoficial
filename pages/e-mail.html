@@ -16,69 +16,67 @@
     <title>NBAZone - Contato</title>
     <style>
         body {
-            font-family: 'Space Mono', monospace;
+            font-family: sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom, #a8ecff, #2d8bff);
+            background: linear-gradient(to bottom, #f11c1c, #006BB6);
             color: #000000;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-<<<<<<< HEAD
-        .bg-dark {
-          background-color: #ffffff;
-        }
-=======
->>>>>>> f593fd5674ad3e5e484da20e52bad0f3ee07009f
 
         header {
             background-color: #ffffff;
             padding: 15px 0;
-<<<<<<< HEAD
             color: #000000;
-=======
->>>>>>> f593fd5674ad3e5e484da20e52bad0f3ee07009f
         }
 
         .navbar {
-            margin-bottom: 0;
+            display: flex;
+            justify-content: space-between; /* Garante que o conteúdo seja distribuído */
+            align-items: center;
+            padding: 0 15px;
         }
 
-        .navbar-brand img {
-            width: 50px;
-            height: auto;
+        .navbar-brand {
+            flex-shrink: 0; /* Evita que o logo encolha */
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style-type: none;
+            margin-left: auto; /* Empurra os itens da nav para a direita */
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 20px;
         }
 
         .navbar-nav .nav-link {
-<<<<<<< HEAD
             color: #000000 !important;
-=======
-            color: #fff !important;
->>>>>>> f593fd5674ad3e5e484da20e52bad0f3ee07009f
             font-weight: bold;
             transition: color 0.3s ease;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #f39c12 !important;
+            color: #b40000 !important;
         }
 
-        .container {
-            max-width: 700px;
-            margin-top: 60px;
-            margin-bottom: 60px;
-            padding: 30px;
+        .container-main {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 50px;
             background-color: #fff;
             border-radius: 10px;
             animation: fadeIn 1s ease-out;
+            flex: 1;
         }
 
         h1 {
             text-align: center;
             font-size: 36px;
-<<<<<<< HEAD
             color: #000000;
-=======
-            color: #333;
->>>>>>> f593fd5674ad3e5e484da20e52bad0f3ee07009f
         }
 
         .contact-info {
@@ -94,38 +92,67 @@
 
         .contact-item i {
             margin-right: 10px;
-            color: #f39c12;
+            color: #b40000;
         }
 
         .contact-item a {
-<<<<<<< HEAD
             color: #000000;
-=======
             color: #333;
->>>>>>> f593fd5674ad3e5e484da20e52bad0f3ee07009f
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
 
         .contact-item a:hover {
-            color: #f39c12;
+            color: #b40000;
         }
 
         footer {
-            text-align: center;
-            margin-top: 50px;
+            background-color: #1d1d1d;
+            color: #fff;
+            padding: 30px 0;
             font-size: 14px;
-            color: #777;
+            text-align: center;
+            width: 100%;
+            margin-top: auto;
         }
 
-        footer a {
-            color: #f39c12;
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline-block;
+            margin: 0 3px;
+        }
+
+        footer ul li a {
+            margin: 0 15px;
+            color: #fff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        footer a:hover {
-            color: #ff5733;
+        footer ul li a:hover {
+            color: #b40000;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #b40000;
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 12px;
         }
 
         @keyframes fadeIn {
@@ -136,7 +163,7 @@
                 opacity: 1;
             }
         }
-        
+
         @media (max-width: 768px) {
             .container {
                 padding: 20px;
@@ -150,41 +177,36 @@
 </head>
 <body>
     <header>
-<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-=======
-        <nav class="navbar navbar-expand-lg navbar-light bg-dark">
->>>>>>> f593fd5674ad3e5e484da20e52bad0f3ee07009f
             <a class="navbar-brand" href="/nbaoficial/">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA4CAMAAAC8A5r5AAAArlBMVEX///8AQ4zaGjIAN4elsMoANYbZACLtqa3so6m1vdIALYMAL4S1u9HXAAAAOYgAMoUAKIEAP4oAPInXAA7a3uittc3wvL3Ax9n33d7vt7rYABfYABzeSVXusLQAHX7ZACaSoL/p6/H55udPaZ9ieajgW2XcMkLS1uMbSY/21tj29/pEYpv88/PbJjrmgYfyxcfiaXFug66Dk7jnio/plZs5WpcAFXwvUZPkdH3dPUvvNBhDAAACMklEQVRIibWW23aqMBCGJ+GgBuWMJ7QQtVIjrRVxt33/F9tJEaRrOdCLvecC5md9a5gMwyQA/9/C0VhZlMFmPZ1O5ygotq6hjO2kGE7iOHjG0KNNvs2ZKbWnlJoIm7GKJC9cSaosODxEdaMiffV+mAcKNQePUe0WlQmpBmYv6vmGJcVhQvtQ67jTM4D8lfahPq/8/C3oQVnWqMWyE63WfrNNJ8rCtj7FOGq8/Hxg4qg7/vlg1ZFAW+UA7wmKpu2Ib11oyu/+QPVfaWLoqOXvafJdAiyBu3sIaLCBfIKi56J2ZfnNNcBngqFPaeMPTfoqgy9RVDS+bOx4ATDBUNISlCZUXgMEPbbEZ7zayO/wPOyPuqDVfY3k2mqs4WOmRq3zXcwf/9U1qrmtT3vqRv1W2Et1Q0aGRjy9Ke17qa5liaGEpbUqg/2l3E+QYqk50KS7iGki+7UD9a61rAZRB0qMOoV13IcStx4bvVFl3FsVLkkv6nnV0hZmL0o87Zs9LPtR4jmqcfLfoHJterUuHGWOZjPXIJZlbWXHLHHU4jO94DB6CkPHlTl84SjjXC9gC384dxlXGeBRQxEV8AEOF7Ycy5ugK4FwVgidf2T86rlh3olGYSFGfDfLdp4xgo7OYrwQKoFUiMKXv4QcRAhqMHGFAs4QjWe6LdHSRKZL5jqhzc+hSMdFGtl2CvMlsh3LTd4hlm9ZtubbGtEiObNWj8nm6FCZm8LpK0dQdSBp2RjwA8m/s7/pkywk3J7sqAAAAABJRU5ErkJggg==" alt="Logo" class="logo">
-                NBAZone
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA4CAMAAAC8A5r5AAAArlBMVEX///8AQ4zaGjIAN4elsMoANYbZACLtqa3so6m1vdIALYMAL4S1u9HXAAAAOYgAMoUAKIEAP4oAPInXAA7a3uittc3wvL3Ax9n33d7vt7rYABfYABzeSVXusLQAHX7ZACaSoL/p6/H55udPaZ9ieajgW2XcMkLS1uMbSY/21tj29/pEYpv88/PbJjrmgYfyxcfiaXFug66Dk7jnio/plZs5WpcAFXwvUZPkdH3dPUvvNBhDAAACMklEQVRIibWW23aqMBCGJ+GgBuWMJ7QQtVIjrRVxt33/F9tJEaRrOdCLvecC5md9a5gMwyQA/9/C0VhZlMFmPZ1O5ygotq6hjO2kGE7iOHjG0KNNvs2ZKbWnlJoIm7GKJC9cSaosODxEdaMiffV+mAcKNQePUe0WlQmpBmYv6vmGJcVhQvtQ67jTM4D8lfahPq/8/C3oQVnWqMWyE63WfrNNJ8rCtj7FOGq8/Hxg4qg7/vlg1ZFAW+UA7wmKpu2Ib11oyu/+QPVfaWLoqOXvafJdAiyBu3sIaLCBfIKi56J2ZfnNNcBngqFPaeMPTfoqgy9RVDS+bOx4ATDBUNISlCZUXgMEPbbEZ7zayO/wPOyPuqDVfY3k2mqs4WOmRq3zXcwf/9U1qrmtT3vqRv1W2Et1Q0aGRjy9Ke17qa5liaGEpbUqg/2l3E+QYqk50KS7iGki+7UD9a61rAZRB0qMOoV13IcStx4bvVFl3FsVLkkv6nnV0hZmL0o87Zs9LPtR4jmqcfLfoHJterUuHGWOZjPXIJZlbWXHLHHU4jO94DB6CkPHlTl84SjjXC9gC384dxlXGeBRQxEV8AEOF7Ycy5ugK4FwVgidf2T86rlh3olGYSFGfDfLdp4xgo7OYrwQKoFUiMKXv4QcRAhqMHGFAs4QjWe6LdHSRKZL5jqhzc+hSMdFGtl2CvMlsh3LTd4hlm9ZtubbGtEiObNWj8nm6FCZm8LpK0dQdSBp2RjwA8m/s7/pkywk3J7sqAAAAABJRU5ErkJggg==" class="logo" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="/nbaoficial/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/nbaoficial/pages/allstargames.html">All Star Games</a>
+                      <a class="nav-link" href="/nbaoficial/pages/allstargames.html">All Star Games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/nbaoficial/pages/arenas.html">Arenas</a>
+                      <a class="nav-link" href="/nbaoficial/pages/arenas.html">Arenas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/nbaoficial/pages/times.html">Times</a>
+                      <a class="nav-link" href="/nbaoficial/pages/times.html">Times</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/nbaoficial/pages/e-mail.html">Contato</a>
+                        <a class="nav-link" href="/nbaoficial/pages/mascotes.html">Mascotes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/nbaoficial/pages/e-mail.html">Contato</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     
-    <div class="container" data-aos="fade-up">
+    <div class="container-main" data-aos="fade-up">
         <h1>Contato</h1>
         <div class="contact-info">
             <p class="contact-item"><i class="fas fa-envelope"></i> E-mail: <a href="mailto:techy.bluiz@gmail.com">techy.bluiz@gmail.com</a></p>
@@ -194,7 +216,22 @@
     </div>
 
     <footer>
-        <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
+        <div class="container">
+            <ul>
+                <li><a href="/nbaoficial/">Home</a></li>
+                <li><a href="/pages/allstargames.html">AllStarGames</a></li>
+                <li><a href="/pages/arenas.html">Arenas</a></li>
+                <li><a href="/pages/e-mail.html">Contato</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
+                <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>&copy; NBAZone 2025. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script>

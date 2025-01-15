@@ -61,6 +61,43 @@ h1 {
     color: #333;
 }
 
+header {
+  background-color: #ffffff;
+  padding: 15px 0;
+  color: #000000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 15px;
+}
+
+.navbar-brand {
+  flex-shrink: 0; 
+}
+
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  margin-left: auto; 
+}
+
+.navbar-nav .nav-item {
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: #000000 !important;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #b40000 !important;
+}
+
 footer {
     background-color: #1d1d1d;
     color: #fff;
@@ -158,6 +195,9 @@ footer p {
                     <li class="nav-item">
                       <a class="nav-link" href="/nbaoficial/pages/times.html">Times</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/nbaoficial/pages/mascotes.html">Mascotes</a>
+                      </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/nbaoficial/pages/e-mail.html">Contato</a>
                     </li>

@@ -4,8 +4,41 @@
     color: white;
 }
 
+header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    color: #000000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 15px;
+}
+
+.navbar-brand {
+    flex-shrink: 0; 
+}
+
+.navbar-nav {
+    display: flex;
+    list-style-type: none;
+    margin-left: auto; 
+}
+
+.navbar-nav .nav-item {
+    margin-left: 20px;
+}
+
 .navbar-nav .nav-link {
-    color: white;
+    color: #000000 !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #b40000 !important;
 }
 
 .baner {
@@ -198,7 +231,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    color: #5f00cc;
+    color: #b40000;
 }
 
 footer .social-icons a {
@@ -210,7 +243,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-    color: #4a2fc4;
+    color: #b40000;
 }
 
 footer p {

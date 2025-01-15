@@ -16,13 +16,53 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>NBAZone - Arenas</title>
     <style>
+      header {
+  background-color: #ffffff;
+  padding: 15px 0;
+  color: #000000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 15px;
+}
+
+.navbar-brand {
+  flex-shrink: 0; 
+}
+
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  margin-left: auto; 
+}
+
+.navbar-nav .nav-item {
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: #000000 !important;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #b40000 !important;
+}
         .baner {
             width: 100%;
             height: auto;
         }
+
+        .container-arenas{
+          max-width: 1200px;
+        }
         
-        .allstar-games {
-            max-width: 1200px;
+        .arenas-info {
+          max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             font-family: 'Barlow', sans-serif;
@@ -30,13 +70,13 @@
             background-color: #f9f9f9;
         }
         
-        .allstar-games h1 {
+        .arenas-info h1 {
             text-align: center;
             color: #C8102E;
             margin-bottom: 30px;
         }
         
-        .allstar-games h2 {
+        .arenas-info h2 {
             color: #004B87;
             margin-top: 20px;
             margin-bottom: 10px;
@@ -89,32 +129,42 @@
             margin-bottom: 0;
         }
 
-        #eventos-memoraveis {
-  padding: 20px;
-  background-color: #f2f2f2;
-  border-radius: 8px;
-  margin-top: 20px;
-}
+        h1 {
+            text-align: center; 
+            color: #C8102E; 
+            margin-bottom: 30px; 
+            font-size: 50px;
+        }
 
-#eventos-memoraveis h2 {
-  color: #004B87;
-  text-align: center;
-  margin-bottom: 20px;
-}
+        p{
+            padding: 0px;
+        }
+        .arena {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .arena img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .arena-details {
+            flex: 1;
+        }
+        .arena-details h2 {
+            margin: 0 0 5px;
+            font-size: 1.5em;
+            color: #0071c5;
+        }
+        .arena-details p {
+            margin: 0;
+        }
 
-#eventos-memoraveis ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-#eventos-memoraveis li {
-  background-color: #fff;
-  margin-bottom: 15px;
-  padding: 15px;
-  border-radius: 8px;
- 
-}
-
+       
 
 footer {
 background-color: #1d1d1d;
@@ -124,7 +174,9 @@ font-size: 14px;
 text-align: center;
 position: relative;
 bottom: 0;
-width: 100%;
+margin: 0%;
+min-width: 1200px;
+width: 100% !important; 
 }
 
 footer ul {
@@ -143,7 +195,7 @@ text-decoration: none;
 transition: color 0.3s ease;
 }
 footer ul li a:hover {
-color: #5f00cc;
+color: #b40000;
 }
 
 footer .social-icons a {
@@ -154,7 +206,7 @@ text-decoration: none;
 transition: color 0.2s ease;
 }
 footer .social-icons a:hover {
-color: #4a2fc4;
+color: #b40000;
 }
 footer p {
 margin-top: 20px;
@@ -204,6 +256,9 @@ footer ul li {
                   <a class="nav-link" href="/nbaoficial/pages/times.html">Times</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="/nbaoficial/pages/mascotes.html">Mascotes</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="/nbaoficial/pages/e-mail.html">Contato</a>
                 </li>
               </ul>
@@ -211,7 +266,7 @@ footer ul li {
           </nav>
     </header>
     
-    <div class="allstar-games">
+    <div class="arenas-info">
         <h1>Arenas</h1>
         <section id="introducao">
             <p>
@@ -219,6 +274,7 @@ footer ul li {
             </p>
         </section>
         <br>
+
         <section id="arenas">
             <h2>Arenas Principais</h2>
             <div class="arena">
@@ -257,63 +313,262 @@ footer ul li {
                 <li><b>O Smoothie King Center, em Nova Orleans, foi construído após o furacão Katrina:</b>A arena dos Pelicans foi inaugurada em 2007, após a devastação causada pelo furacão Katrina. A construção do Smoothie King Center foi um marco na recuperação da cidade.</li><br>
             </ul>
         </section>
-
-        <section>
-          <h2>Eventos Memoráveis</h2>
-          <ul>
-            <li>
-              <h3>Final da NBA de 2016</h3>
-              <p>Local: Oracle Arena, Oakland, CA</p>
-              <p>O Golden State Warriors enfrentou o Cleveland Cavaliers em uma das finais mais emocionantes da história.</p>
-            </li>
-            <li>
-              <h3>Jogo de despedida de Kobe Bryant</h3>
-              <p>Local: Staples Center, Los Angeles, CA</p>
-              <p>Uma noite inesquecível em 2016, onde Kobe marcou 60 pontos no último jogo de sua carreira.</p>
-            </li>
-            <li>
-              <h3>O Jogo das Estrelas de 1992</h3>
-              <p>Local: Orlando Arena, Orlando, FL</p>
-              <p>Este All-Star Game ficou marcado pela emocionante participação de Magic Johnson, que havia se aposentado em 1991 após revelar que era portador do HIV. Ele foi ovacionado pelos fãs e encerrou o jogo com uma performance icônica, sendo eleito o MVP da partida.</p>
-            </li>
-            <li>
-              <h3>A Volta dos Bulls em 1996</h3>
-              <p>Local: United Center, Chicago, IL</p>
-              <p>Após o retorno de Michael Jordan, os Bulls conquistaram o título da NBA com um recorde de 72 vitórias na temporada regular, tornando-se uma das equipes mais icônicas da história.</p>
-            </li>
-            <li>
-              <h3>O Bloqueio de LeBron James em 2016</h3>
-              <p>Local: Oracle Arena, Oakland, CA</p>
-              <p>Conhecido como "The Block", o lance de LeBron James contra Andre Iguodala no Jogo 7 das Finais de 2016 é considerado um dos momentos mais lendários da história da NBA.</p>
-            </li>
-          </ul>
-        </section>           
-    </div>
-
-    <footer>
-      <div class="container">
-          <ul>
-              <li><a href="/nbaoficial/">Home</a></li>
-              <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
-              <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
-              <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
-          </ul>
-          
-          <div class="social-icons">
-              <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
-              <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
-              <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
-              <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+        <div class="container-arenas">
+          <div class="arena">
+              <img src="https://blog.ticketmaster.com/wp-content/uploads/United-Center-Bulls_BSP3742-1024x681.jpg" alt="United Center">
+              <div class="arena-details">
+                  <h2><b>United Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/ChicagoBulls.html">Chicago Bulls</a></p>
+                  <p>Inauguração: 1994</p>
+                  <p>Localização: Chicago, Illinois</p>
+                  <p>O United Center é conhecido por ser o lar dos Chicago Bulls e do Chicago Blackhawks, e é famoso por sua capacidade de 20.917 espectadores.</p>
+              </div>
           </div>
-      </div>
       
-      <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
-    </footer>
+          <div class="arena">
+              <img src="https://www.hok.com/wp-content/uploads/2019/05/ATT-center-SF-20160330_DIG_2708_MAS-1900-1600x1069.jpg" alt="AT&T Center">
+              <div class="arena-details">
+                  <h2><b>AT&T Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/SanAntonioSpurs.html">San Antonio Spurs</a></p>
+                  <p>Inauguração: 2002</p>
+                  <p>Localização: San Antonio, Texas</p>
+                  <p>O AT&T Center é conhecido pela sua acústica excelente e pelo ambiente vibrante, além de ser o lar dos San Antonio Spurs.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ball_Arena_exterior_2022.jpg/300px-Ball_Arena_exterior_2022.jpg" alt="Ball Arena">
+              <div class="arena-details">
+                  <h2><b>Ball Arena</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/DenverNuggets.html">Denver Nuggets</a></p>
+                  <p>Inauguração: 1999</p>
+                  <p>Localização: Denver, Colorado</p>
+                  <p>O Ball Arena é uma arena multiuso, famosa por sediar os Denver Nuggets e outros eventos de alto nível.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY-wEyY2lDaFABHhCtcxBm8MnynDaD0ao6VQ&s" alt="Footprint Center">
+              <div class="arena-details">
+                  <h2><b>Footprint Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/PhoenixSuns.html">Phoenix Suns</a></p>
+                  <p>Inauguração: 1992</p>
+                  <p>Localização: Phoenix, Arizona</p>
+                  <p>O Footprint Center é a arena principal dos Phoenix Suns e é conhecida por sua energia vibrante durante os jogos.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Capital_One_Arena_-_Washington%2C_D.C.jpg/1200px-Capital_One_Arena_-_Washington%2C_D.C.jpg" alt="Capital One Arena">
+              <div class="arena-details">
+                  <h2><b>Capital One Arena</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/WashingtonWizards.html">Washington Wizards</a></p>
+                  <p>Inauguração: 1997</p>
+                  <p>Localização: Washington, D.C.</p>
+                  <p>A Capital One Arena é famosa pela sua proximidade com o centro de Washington e pelo ambiente acolhedor durante os jogos.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/State_Farm_%28Philips%29_Arena%2C_Atlanta%2C_GA_%2846558861525%29_-_2019.jpg" alt="State Farm Arena">
+              <div class="arena-details">
+                  <h2><b>State Farm Arena</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/AtlantaHawks.html">Atlanta Hawks</a></p>
+                  <p>Inauguração: 1999</p>
+                  <p>Localização: Atlanta, Georgia</p>
+                  <p>O State Farm Arena é um dos espaços mais modernos da NBA e é conhecido por sua excelente experiência para os fãs.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://cdn.panrotas.com.br/portal-panrotas-statics/media-files-cache/385487/1adfae008707864b49ac95f5c0a2d013kiacenter240020231220/55,0,2345,1400/1206,720,0.29/0/default.jpg" alt="Amway Center">
+              <div class="arena-details">
+                  <h2><b>Amway Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/OrlandoMagic.html">Orlando Magic</a></p>
+                  <p>Inauguração: 2010</p>
+                  <p>Localização: Orlando, Flórida</p>
+                  <p>O Amway Center é a casa do Orlando Magic e é conhecido por sua arquitetura moderna e tecnologia avançada.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://media.delawarenorth.com/wp-content/uploads/2023/08/TDGarden_Exterior_thumb.jpg" alt="TD Garden">
+              <div class="arena-details">
+                  <h2><b>TD Garden</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/BostonCeltics.html">Boston Celtics</a></p>
+                  <p>Inauguração: 1995</p>
+                  <p>Localização: Boston, Massachusetts</p>
+                  <p>O TD Garden é famoso por sua energia vibrante e por ser o lar dos Boston Celtics, oferecendo uma atmosfera única para os fãs.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://www.spectrumcentercharlotte.com/assets/img/Spectrum_Exterior_Thumb-9e853aa3f9.jpg" alt="Spectrum Center">
+              <div class="arena-details">
+                  <h2><b>Spectrum Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/CharlotteHornets.html">Charlotte Hornets</a></p>
+                  <p>Inauguração: 2005</p>
+                  <p>Localização: Charlotte, Carolina do Norte</p>
+                  <p>O Spectrum Center é conhecido por sua atmosfera animada e sua fidelidade à equipe dos Charlotte Hornets.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/1a/a8/ab/photo0jpg.jpg?w=900&h=-1&s=1" alt="Barclays Center">
+              <div class="arena-details">
+                  <h2><b>Barclays Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/BrooklynNets.html">Brooklyn Nets</a></p>
+                  <p>Inauguração: 2012</p>
+                  <p>Localização: Brooklyn, Nova Iorque</p>
+                  <p>O Barclays Center é a casa dos Brooklyn Nets e é conhecido pela sua arquitetura moderna e pela sua proximidade com o centro de Brooklyn.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Chase_Center.jpg" alt="Chase Center">
+              <div class="arena-details">
+                  <h2><b>Chase Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/GoldenStateWarriors.html">Golden State Warriors</a></p>
+                  <p>Inauguração: 2019</p>
+                  <p>Localização: São Francisco, Califórnia</p>
+                  <p>O Chase Center é conhecido por sua moderna infraestrutura e como a casa dos Golden State Warriors.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9uXMo_3LJQ1Hmzy2tHbnuJakmaRJltkmQA&s" alt="Target Center">
+              <div class="arena-details">
+                  <h2><b>Target Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/MinnesotaTimberwolves.html">Minnesota Timberwolves</a></p>
+                  <p>Inauguração: 1990</p>
+                  <p>Localização: Minneapolis, Minnesota</p>
+                  <p>O Target Center é conhecido por ser o lar dos Minnesota Timberwolves, com capacidade para mais de 19.000 espectadores.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/American_Airlines_Center_%286246886325%29_cropped.jpg" alt="American Airlines Center">
+              <div class="arena-details">
+                  <h2><b>American Airlines Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/DallasMavericks.html">Dallas Mavericks</a></p>
+                  <p>Inauguração: 2001</p>
+                  <p>Localização: Dallas, Texas</p>
+                  <p>O American Airlines Center é a casa dos Dallas Mavericks e um dos principais centros de eventos de Dallas.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Paycom_Center.jpg" alt="Paycom Center">
+              <div class="arena-details">
+                  <h2><b>Paycom Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/OklahomaCityThunder.html">Oklahoma City Thunder</a></p>
+                  <p>Inauguração: 2002</p>
+                  <p>Localização: Oklahoma City, Oklahoma</p>
+                  <p>O Paycom Center é a casa do Oklahoma City Thunder e é conhecido por sua atmosfera acolhedora e vibrante.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Toyota_Center_entr.jpg" alt="Toyota Center">
+              <div class="arena-details">
+                  <h2><b>Toyota Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/HoustonRockets.html">Houston Rockets</a></p>
+                  <p>Inauguração: 2003</p>
+                  <p>Localização: Houston, Texas</p>
+                  <p>O Toyota Center é famoso pela sua excelente acústica e por ser a casa dos Houston Rockets.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Portland_July_2017_06_%28Moda_Center%29.jpg" alt="Moda Center">
+              <div class="arena-details">
+                  <h2><b>Moda Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/PortlandTrailBlazers.html">Portland Trail Blazers</a></p>
+                  <p>Inauguração: 1995</p>
+                  <p>Localização: Portland, Oregon</p>
+                  <p>O Moda Center é a casa dos Portland Trail Blazers e é conhecido por ser um dos melhores locais para assistir a jogos.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWmhGpSAPXYwa_alBJII3h-G4Qux4Qyqeu1g&s" alt="Delta Center">
+              <div class="arena-details">
+                  <h2><b>Delta Center</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/UtahJazz.html">Utah Jazz</a></p>
+                  <p>Inauguração: 1991</p>
+                  <p>Localização: Salt Lake City, Utah</p>
+                  <p>O Delta Center é conhecido como o lar dos Utah Jazz e um local vibrante para eventos esportivos.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://s3.amazonaws.com/venuesnow.com/wp-content/uploads/2024/10/23125056/Exterior-rooftop-cavs-colors-1.jpg" alt="Rocket Mortgage FieldHouse">
+              <div class="arena-details">
+                  <h2><b>Rocket Mortgage FieldHouse</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/ClevelandCavaliers.html">Cleveland Cavaliers</a></p>
+                  <p>Inauguração: 1994</p>
+                  <p>Localização: Cleveland, Ohio</p>
+                  <p>O Rocket Mortgage FieldHouse é a casa dos Cleveland Cavaliers e um ponto de encontro para eventos em Cleveland.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://cdn.vox-cdn.com/thumbor/55VBPmSkDxW6yPkhKpsvf-rls3s=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9193741/LCA_157.jpg" alt="Little Caesars Arena">
+              <div class="arena-details">
+                  <h2><b>Little Caesars Arena</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/DetroitPistons.html">Detroit Pistons</a></p>
+                  <p>Inauguração: 2017</p>
+                  <p>Localização: Detroit, Michigan</p>
+                  <p>O Little Caesars Arena é a casa dos Detroit Pistons e um moderno centro de entretenimento em Detroit.</p>
+              </div>
+          </div>
+      
+          <div class="arena">
+              <img src="https://img.msg.com/wp-content/uploads/2021/02/MSG_Welcome-Fans_VLP.jpg?w=768" alt="Madison Square Garden">
+              <div class="arena-details">
+                  <h2><b>Madison Square Garden</b></h2>
+                  <p>Time: <a href="/nbaoficial/times/NewYorkKnicks.html">New York Knicks</a></p>
+                  <p>Inauguração: 1968</p>
+                  <p>Localização: Nova Iorque, Nova Iorque</p>
+                  <p>O Madison Square Garden é um dos locais mais famosos e históricos para eventos esportivos e de entretenimento, sendo a casa dos New York Knicks.</p>
+              </div>
+            </div>
+      </div>
+    <br>
+
+    <section id="EventosMemoráveis">
+      <h2>Eventos Memoráveis</h2>
+      <ul>
+          <li><b>Final da NBA de 2016:</b> O Golden State Warriors enfrentou o Cleveland Cavaliers em uma das finais mais emocionantes da história.</li><br>
+          <li><b>Jogo de despedida de Kobe Bryant:</b>Uma noite inesquecível em 2016, onde Kobe marcou 60 pontos no último jogo de sua carreira.</li><br>
+          <li><b>O Jogo das Estrelas de 1992: </b> Este All-Star Game ficou marcado pela emocionante participação de Magic Johnson, que havia se aposentado em 1991 após revelar que era portador do HIV. Ele foi ovacionado pelos fãs e encerrou o jogo com uma performance icônica, sendo eleito o MVP da partida.</li><br>
+          <li><b>A Volta dos Bulls em 1996: </b>Após o retorno de Michael Jordan, os Bulls conquistaram o título da NBA com um recorde de 72 vitórias na temporada regular, tornando-se uma das equipes mais icônicas da história.</li><br>
+          <li><b>O Bloqueio de LeBron James em 2016:</b>Conhecido como "The Block", o lance de LeBron James contra Andre Iguodala no Jogo 7 das Finais de 2016 é considerado um dos momentos mais lendários da história da NBA.</li><br>
+      </ul>
+  </section>
+
+  <footer class="footer">
+    <div class="container-footer">
+        <ul>
+            <li><a href="/nbaoficial/">Home</a></li>
+            <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
+            <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
+            <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
+        </ul>
+        
+        <div class="social-icons">
+            <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
+            <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+    
+    <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
+  </footer>
     
   
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
-
-</body>
-</html>
+  </body>
+  </html>
