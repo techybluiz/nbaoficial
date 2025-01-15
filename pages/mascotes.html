@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="/nbaoficial/css/geral.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>NBAZone - Mascotes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            text-align: center;
+        }
+        .baner{
+            width: 100%;
+             height: 50%;
+                    }
+        a.nav-link{
+             color: #000000;
+                    }
+
+        .navbar-expand-lg .navbar-nav {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+             color: white;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+        }  
+        h1 {
+            text-align: center; /* Centraliza o título principal */
+            color: #C8102E; /* Cor do título principal */
+            margin-bottom: 30px; /* Margem inferior do título */
+            font-size: 50px;
+        }
+
+        p{
+            padding: 0px;
+        }
+        .mascot {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .mascot img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .mascot-details {
+            flex: 1;
+        }
+        .mascot-details h2 {
+            margin: 0 0 5px;
+            font-size: 1.5em;
+            color: #0071c5;
+        }
+        .mascot-details p {
+            margin: 0;
+        }
+   
+    </style>
+</head>
+<body>
+    <img class="baner" src="https://i.ibb.co/tH9Z1Mh/stargamesbaner.png" alt="baner">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAA4CAMAAAC8A5r5AAAArlBMVEX///8AQ4zaGjIAN4elsMoANYbZACLtqa3so6m1vdIALYMAL4S1u9HXAAAAOYgAMoUAKIEAP4oAPInXAA7a3uittc3wvL3Ax9n33d7vt7rYABfYABzeSVXusLQAHX7ZACaSoL/p6/H55udPaZ9ieajgW2XcMkLS1uMbSY/21tj29/pEYpv88/PbJjrmgYfyxcfiaXFug66Dk7jnio/plZs5WpcAFXwvUZPkdH3dPUvvNBhDAAACMklEQVRIibWW23aqMBCGJ+GgBuWMJ7QQtVIjrRVxt33/F9tJEaRrOdCLvecC5md9a5gMwyQA/9/C0VhZlMFmPZ1O5ygotq6hjO2kGE7iOHjG0KNNvs2ZKbWnlJoIm7GKJC9cSaosODxEdaMiffV+mAcKNQePUe0WlQmpBmYv6vmGJcVhQvtQ67jTM4D8lfahPq/8/C3oQVnWqMWyE63WfrNNJ8rCtj7FOGq8/Hxg4qg7/vlg1ZFAW+UA7wmKpu2Ib11oyu/+QPVfaWLoqOXvafJdAiyBu3sIaLCBfIKi56J2ZfnNNcBngqFPaeMPTfoqgy9RVDS+bOx4ATDBUNISlCZUXgMEPbbEZ7zayO/wPOyPuqDVfY3k2mqs4WOmRq3zXcwf/9U1qrmtT3vqRv1W2Et1Q0aGRjy9Ke17qa5liaGEpbUqg/2l3E+QYqk50KS7iGki+7UD9a61rAZRB0qMOoV13IcStx4bvVFl3FsVLkkv6nnV0hZmL0o87Zs9LPtR4jmqcfLfoHJterUuHGWOZjPXIJZlbWXHLHHU4jO94DB6CkPHlTl84SjjXC9gC384dxlXGeBRQxEV8AEOF7Ycy5ugK4FwVgidf2T86rlh3olGYSFGfDfLdp4xgo7OYrwQKoFUiMKXv4QcRAhqMHGFAs4QjWe6LdHSRKZL5jqhzc+hSMdFGtl2CvMlsh3LTd4hlm9ZtubbGtEiObNWj8nm6FCZm8LpK0dQdSBp2RjwA8m/s7/pkywk3J7sqAAAAABJRU5ErkJggg==" class="logo" alt="">
+        <h1 class="titulo">Mascotes</h1>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/nbaoficial/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nbaoficial/pages/allstargames.html">All Star Games</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nbaoficial/pages/arenas.html">Arenas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nbaoficial/pages/times.html">Times</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/nbaoficial/pages/mascotes.html">Mascotes</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/nbaoficial/pages/e-mail.html">Contato</a>
+                </li>
+              </ul>
+        </div>
+          </nav>
+    </header>
+    <header>
+        <h1>Conheça os mascotes da NBA</h1>
+        <p>Conheça os mascotes que fazem a NBA mais animada e emocionante!!</p>
+    </header>
+
+    <div class="container">
+        <div class="mascot">
+            <img src="https://cdn.nba.com/teams/uploads/sites/1610612741/2022/06/allstar_jpg.jpg" alt="Benny the Bull">
+            <div class="mascot-details">
+                <h2>Benny the Bull</h2>
+                <p>Time: <a href="/nbaoficial/times/chicagobulls.html">Chicago Bulls</a> </p>
+                <p>Data de criação: 1969</p>
+                <p>Inspiração: Uma homenagem à herança dos matadouros da cidade e ao nome da equipe.</p>
+                <p>Benny anima a torcida desde 1969, conhecido por suas acrobacias e palhaçadas cômicas.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/2019/04/The-Coyote-e1679258294165.jpg" alt="The Coyote">
+            <div class="mascot-details">
+                <h2>The Coyote</h2>
+                <p>Time: <a href="/nbaoficial/times/SanAntonioSpurs.html">San Antonio Spurs</a></p>
+                <p>Data de criação: 1983</p>
+                <p>Inspiração: A natureza astuta e adaptável dos coiotes, simbolizando resiliência.</p>
+                <p>Com seu humor afiado e habilidades de dança, The Coyote é um favorito da torcida em San Antonio.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/2019/04/Supermascot-Rocky-e1679257621271.jpg" alt="Rocky the Mountain Lion">
+            <div class="mascot-details">
+                <h2>Rocky the Mountain Lion</h2>
+                <p>Time: Denver Nuggets</p>
+                <p>Data de criação: 1990</p>
+                <p>Inspiração: Um leão-da-montanha, representando a força e o espírito das montanhas do Colorado.</p>
+                <p>Rocky é conhecido por suas habilidades acrobáticas, apresentações cômicas e por ser um dos mascotes mais ativos em eventos comunitários.</p>
+            </div>
+        </div>        
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/2019/04/The-Gorilla-e1679258236392.jpg" alt="Go the Gorilla">
+            <div class="mascot-details">
+                <h2>Go the Gorilla</h2>
+                <p>Time: Phoenix Suns</p>
+                <p>Data de criação: 1980</p>
+                <p>Inspiração: Uma escolha única e divertida, destacando a criatividade do time.</p>
+                <p>Go é famoso por suas danças e acrobacias impressionantes, sempre animando os fãs.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Washington_Wizards_G-Man.jpg" alt="G-Man">
+            <div class="mascot-details">
+                <h2>G-Man</h2>
+                <p>Time: Washington Wizards</p>
+                <p>Data de criação: 1997</p>
+                <p>Inspiração: Os temas místicos e mágicos associados aos magos.</p>
+                <p>Conhecido por suas acrobacias atléticas e personalidade envolvente, G-Man sempre traz magia para a quadra.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://cdn.nba.com/teams/uploads/sites/1610612737/2023/06/harry_2223_3.jpg" alt="Harry the Hawk">
+            <div class="mascot-details">
+                <h2>Harry the Hawk</h2>
+                <p>Time: Atlanta Hawks</p>
+                <p>Data de criação: 1986</p>
+                <p>Inspiração: Um falcão, representando velocidade, visão e precisão.</p>
+                <p>Harry é amado pelos fãs por sua habilidade de interagir com o público e seu estilo energético.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://puremagicbr.wordpress.com/wp-content/uploads/2018/03/magic-lockup.png?w=640" alt="Benny the Bull">
+            <div class="mascot-details">
+                <h2>Stuff the Magic Dragon</h2>
+                <p>Time: Orlando Magic</p>
+                <p>Data de criação: 1989</p>
+                <p>Inspiração: Dragões mágicos que simbolizam fantasia e diversão.</p>
+                <p>Stuff é conhecido por suas travessuras e por entreter multidões com sua energia contagiante.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://pbs.twimg.com/media/E-XpgWRWEBUXT0s.jpg" alt="Benny the Bull">
+            <div class="mascot-details">
+                <h2>Lucky the Leprechaun</h2>
+                <p>Time: Boston Celtics</p>
+                <p>Data de criação: 1966</p>
+                <p>Inspiração: A forte comunidade irlandesa de Boston e a tradição dos duendes de trazer sorte.</p>
+                <p>Conhecido por sua barba verde, chapéu e trevo de quatro folhas, Lucky é um símbolo da sorte e da tradição dos Celtics, sempre animando a torcida com suas danças e acrobacias.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGZQMxp3XskI1KorSrNSM72eczJDDqTidu9Q&s" alt="Benny the Bull">
+            <div class="mascot-details">
+                <h2>Hugo the Hornet</h2>
+                <p>Time: Charlotte Hornets</p>
+                <p>Data de criação: 1988</p>
+                <p>Inspiração: O nome e o logo do time, que fazem referência a um tipo de vespa.</p>
+                <p>Com seu traje de vespa e sua personalidade energética, Hugo é um dos mascotes mais reconhecidos da NBA. Ele é conhecido por suas acrobacias e interações com a torcida.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://img.bleacherreport.net/img/images/photos/002/972/346/hi-res-cb1caec662c39f78169a5911951093e2_crop_north.jpg?1405019399&w=3072&h=2048" alt="BrooklynKnight">
+            <div class="mascot-details">
+                <h2>BrooklynKnight</h2>
+                <p>Time: Brooklyn Nets</p>
+                <p>Data de criação: 2012</p>
+                <p>Data de aposentadoria: 2014</p>
+                <p>Inspiração: Um cavaleiro representando força e a identidade do Brooklyn.</p>
+                <p>O BrooklynKnight foi apresentado como uma figura heróica, mas foi descontinuado após apenas dois anos de atividade.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrEeKOXVkfqBkeqIByIMLDiBThEGhRQLCzEw&s" alt="Bango">
+            <div class="mascot-details">
+                <h2>Bango</h2>
+                <p>Time: Milwaukee Bucks</p>
+                <p>Data de criação: 1977</p>
+                <p>Inspiração: O nome "Bango" foi escolhido em um concurso e representa o som da bola entrando na cesta.</p>
+                <p>Conhecido por sua energia contagiante e suas acrobacias, Bango é um dos mascotes mais antigos e queridos da NBA. Ele é frequentemente visto pulando e dançando para animar a torcida.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/2023/03/moondog-e1679257469995.jpg" alt="Moondog">
+            <div class="mascot-details">
+                <h2>Moondog</h2>
+                <p>Time: Cleveland Cavaliers</p>
+                <p>Data de criação: 2003</p>
+                <p>Inspiração: Um cão amigável e energético, representando a lealdade e paixão dos fãs dos Cavaliers.</p>
+                <p>Moondog é conhecido por sua personalidade vibrante, danças divertidas e capacidade de animar a torcida em todos os jogos.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/bb-plugin/cache/dallas-e1679257105669-circle.png" alt="Benny the Bull">
+            <div class="mascot-details">
+                <h2>Champ e MavsMan</h2>
+                <p>Time: Dallas Mavericks</p>
+                <p>Data de criação: 1996 e 2002 </p>
+                <p>Inspiração: Um super-herói, representando a força e o espírito competitivo dos Mavericks.</p>
+                <p>Conhecido por sua aparência de cavalo azul e suas acrobacias, Champ é um dos mascotes mais populares da NBA.<br>
+                   Com seu design inspirado em uma bola de basquete, Mavs Man é conhecido por sua energia e interações com a torcida.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/bb-plugin/cache/crunch-e1679257201176-circle.jpg" alt="Crunch the Wolf">
+            <div class="mascot-details">
+                <h2>Crunch the Wolf</h2>
+                <p>Time: Minnesota Timberwolves</p>
+                <p>Data de criação: 1996</p>
+                <p>Inspiração: Um lobo, representando a força, lealdade e espírito selvagem da equipe.</p>
+                <p>Crunch é conhecido por suas interações com os fãs, acrobacias impressionantes e sua presença constante em eventos comunitários.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo_-DTfyk-DiYc862R0ZicVpzrkP5j-zRvgQ&s" alt="Clutch the Rocket Bear">
+            <div class="mascot-details">
+                <h2>Clutch the Rocket Bear</h2>
+                <p>Time: Houston Rockets</p>
+                <p>Data de criação: 1995</p>
+                <p>Inspiração: Um urso, representando a força e a energia do time.</p>
+                <p>Clutch é conhecido por sua personalidade amigável e por animar os fãs durante os jogos com suas acrobacias.</p>
+            </div>
+        </div>
+
+        <div class="mascot">
+            <img src="https://mascothalloffame.com/wp-content/uploads/bb-plugin/cache/SirCC-e1712775852801-circle.png" alt="Sir C.C.">
+            <div class="mascot-details">
+                <h2>Sir C.C.</h2>
+                <p>Time: Cleveland Cavaliers</p>
+                <p>Desde: 2010</p>
+                <p>Inspiração: Um cavaleiro medieval, representando a história e a tradição.</p>
+                <p>Com sua armadura e seu cavalo, Sir C.C. traz um toque de nobreza e aventura para os jogos dos Cavaliers.</p>
+            </div>
+        </div>
+        
+        <div class="mascot">
+            <img src="https://cdn.nba.com/teams/uploads/sites/1610612760/2021/12/hdr-211215-JIMMYDO-OKCNOP-029.jpg" alt="Rumble the Bison">
+            <div class="mascot-details">
+                <h2>Rumble the Bison</h2>
+                <p>Time: Oklahoma City Thunder</p>
+                <p>Data de criação: 12 de fevereiro de 2009</p>
+                <p>Inspiração: O nome "Rumble" deriva do som de um trovão, fazendo referência ao nome do time "Thunder".</p>
+                <p>Conhecido por sua energia e pelos seus truques, Rumble é um bisão antropomórfico que representa a força e a tradição do oeste americano. Ele é um dos mascotes mais populares da NBA e já ganhou o prêmio de "Mascote do Ano" em 2009.</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="container">
+            <ul>
+                <li><a href="/nbaoficial/">Home</a></li>
+                <li><a href="/nbaoficial/pages/allstargames.html">AllStarGames</a></li>
+                <li><a href="/nbaoficial/pages/arenas.html">Arenas</a></li>
+                <li><a href="/nbaoficial/pages/e-mail.html">Contato</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="https://github.com/techybluiz"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/biihlz_?s=21"><i class="fa-brands fa-twitter"></i></a>
+                <a href="mailto:techy.bluiz@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/bianca-santos-71227a19b/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <p class="copy-text">&copy; 2025 Todos os direitos reservados. Desenvolvido por Bianca Luiz.</p>
+      </footer>
+        
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-fIS28fKNuSy82olZu2UNUbzJrjKk4cOeY0PnN/3kq5CkTX9aW1Kgq3M08iIKG/mnEw5rwS8QqH0a1ED6N5O4Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      </body>
+      </html>
