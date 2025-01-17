@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,21 +36,39 @@
             width: 100%;
              height: 50%;
                     }
-        a.nav-link{
-             color: #000000;
-                    }
+                    .navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 15px;
+}
 
-        .navbar-expand-lg .navbar-nav {
-            padding-right: 0.5rem;
-            padding-left: 0.5rem;
-             color: white;
-        }
-        .navbar-nav .nav-link {
-            color: white;
-        }  
+.navbar-brand {
+  flex-shrink: 0; 
+}
+
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  margin-left: auto; 
+}
+
+.navbar-nav .nav-item {
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+  color: #000000 !important;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #b40000 !important;
+} 
         h1 {
             text-align: center; 
-            color: #C8102E; 
+            color: #790000; 
             margin-bottom: 30px; 
             font-size: 50px;
         }
@@ -104,8 +122,8 @@
                   <a class="nav-link" href="/pages/times.html">Times</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/mascotes.html">Mascotes</a>
-                  </li>
+                  <a class="nav-link" href="/pages/mascotes.html">Mascotes</a>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/pages/e-mail.html">Contato</a>
                 </li>
@@ -113,6 +131,7 @@
         </div>
           </nav>
     </header>
+    
     <header>
         <h1>Conheça os mascotes da NBA</h1>
         <p>Conheça os mascotes que fazem a NBA mais animada e emocionante!!</p>
